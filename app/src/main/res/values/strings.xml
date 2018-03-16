@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Simple Number App</string>
+    <string name="black_hole_explosion">Black Hole Explosion</string>
+    <string name="toast_label">Toast</string>
+    <string name="random_label">Random</string>
+    <string name="count_label">Count</string>
+</resources>
