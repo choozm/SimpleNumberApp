@@ -5,4 +5,9 @@
     <string name="random_label">Random</string>
     <string name="count_label">Count</string>
     <string name="random_heading">Here is random number between 0 and %1d</string>
+
+    <plurals name="numberOfTaps">
+        <item quantity="one">You tap %1d time</item>
+        <item quantity="other">You tap %1d times</item>
+    </plurals>
 </resources>

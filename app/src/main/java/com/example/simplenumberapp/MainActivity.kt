@@ -4,7 +4,6 @@ import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.TextView
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -16,11 +15,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun toastMe (view: View) {
-        var toastText = getTextViewValue().toString()
-
-        toastText = "You press $toastText times"
-
+        val count = getTextViewValue()
+        val toastText = resources.getQuantityString(R.plurals.numberOfTaps, count, count)
         val myToast = Toast.makeText(this, toastText, Toast.LENGTH_SHORT)
+
         myToast.show()
     }
 
@@ -35,8 +33,7 @@ class MainActivity : AppCompatActivity() {
     fun randomMe(view: View) {
         val randomIntent = Intent(this, SecondActivity::class.java)
 
-        val countString = textView.text.toString()
-        val count = Integer.parseInt(countString)
+        val count = getTextViewValue()
         randomIntent.putExtra(SecondActivity.TOTAL_COUNT, count)
 
         startActivity(randomIntent)
