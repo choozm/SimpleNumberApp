@@ -1,5 +1,6 @@
 package com.example.simplenumberapp
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -24,12 +25,21 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun countMe (view: View) {
-        val showCountTextView = findViewById<TextView>(R.id.textView)
         var count = getTextViewValue()
         count++
 
         // Display new value in the text view
-        showCountTextView.text = count.toString()
+        textView.text = count.toString()
+    }
+
+    fun randomMe(view: View) {
+        val randomIntent = Intent(this, SecondActivity::class.java)
+
+        val countString = textView.text.toString()
+        val count = Integer.parseInt(countString)
+        randomIntent.putExtra(SecondActivity.TOTAL_COUNT, count)
+
+        startActivity(randomIntent)
     }
 
     private fun getTextViewValue (): Int {
