@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
     fun toastMe (view: View) {
         var toastText = getTextViewValue().toString()
 
-        toastText = "You press " + toastText + " times"
+        toastText = "You press $toastText times"
 
         val myToast = Toast.makeText(this, toastText, Toast.LENGTH_SHORT)
         myToast.show()
