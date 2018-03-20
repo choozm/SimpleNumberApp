@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
         count++
 
         // Display new value in the text view
-        textView.text = count.toString()
+        count_textview.text = count.toString()
     }
 
     fun randomMe(view: View) {
@@ -41,7 +41,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun getTextViewValue (): Int {
         // Get the value of the text view
-        val countString = textView.text.toString()
+        val countString = count_textview.text.toString()
 
         // Convert value to number and increment it
         val count: Int = Integer.parseInt(countString)
