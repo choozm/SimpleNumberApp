@@ -16,7 +16,6 @@ import org.junit.Assert.*
  */
 @RunWith(AndroidJUnit4::class)
 class ToastButtonTest() : BaseTest() {
-    private var count = 0
 
     @Test
     fun useAppContext() {
@@ -26,22 +25,28 @@ class ToastButtonTest() : BaseTest() {
     }
 
     @Test
-    fun testToastButton() {
+    fun testToastButton0() {
         testToastButtonN(0)
+    }
+
+    @Test
+    fun testToastButton1() {
         testToastButtonN(1)
-        testToastButtonN(1)
-        testToastButtonN(5)  // "You taps 7 times"
+    }
+
+    @Test
+    fun testToastButton2() {
+        testToastButtonN(2)
     }
 
     private fun testToastButtonN(n: Int) {
         if (n > 0) {
             for (i in 1..n) {
                 clickId(R.id.count_button)
-                count++
             }
         }
 
         clickId(R.id.toast_button)
-        verifyToastMessage(activity.activity.resources.getQuantityString(R.plurals.numberOfTaps, count, count))
+        verifyToastMessage(activity.activity.resources.getQuantityString(R.plurals.numberOfTaps, n, n))
     }
 }
