@@ -46,6 +46,9 @@ class ToastButtonTest() : BaseTest() {
             }
         }
 
+        // create delay and wait for previous toast to disappear
+        (1..5).forEach { clickId(R.id.count_textview) }
+
         clickId(R.id.toast_button)
         verifyToastMessage(activity.activity.resources.getQuantityString(R.plurals.numberOfTaps, n, n))
     }
