@@ -33,7 +33,9 @@ import android.support.test.runner.AndroidJUnit4
 import org.junit.Rule
 import org.junit.runner.RunWith
 import org.hamcrest.Matchers.not
+import org.junit.Ignore
 
+@Ignore
 @RunWith(AndroidJUnit4::class)
 open class BaseTest{
 
